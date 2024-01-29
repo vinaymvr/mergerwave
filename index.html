@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            margin: 15px;
+        }
+
+        .dashboard {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #user-role {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Loan Management System</h1>
+        <div id="user-info">
+            <span id="user-role">Role: <span id="role-name">None</span></span>
+        </div>
+    </header>
+    <main>
+        <section id="role-selection">
+            <h2>Select Your Role</h2>
+            <button onclick="setRole('admin')">Admin</button>
+            <button onclick="setRole('borrower')">Borrower</button>
+            <button onclick="setRole('lender')">Lender</button>
+        </section>
+        <section id="admin-dashboard" class="dashboard hidden">
+            <!-- Admin-specific content will go here -->
+            <h2>Admin Dashboard</h2>
+            <p>View and manage all transactions and user activities.</p>
+        </section>
+        <section id="borrower-dashboard" class="dashboard hidden">
+            <!-- Borrower-specific content will go here -->
+            <h2>Borrower Dashboard</h2>
+            <button onclick="requestLoan()">Request Loan</button>
+            <div id="loan-requests">
+                <!-- Loan requests will be listed here -->
+            </div>
+        </section>
+        <section id="lender-dashboard" class="dashboard hidden">
+            <!-- Lender-specific content will go here -->
+            <h2>Lender Dashboard</h2>
+            <p>View open loan requests and manage your investments.</p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
